@@ -297,6 +297,98 @@
             margin-top: 2rem;
         }
 
+        /* Проекты */
+        .projects-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .projects-grid::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .projects-grid::-webkit-scrollbar-track {
+            background: var(--md-sys-color-surface);
+            border-radius: 4px;
+        }
+
+        .projects-grid::-webkit-scrollbar-thumb {
+            background: var(--md-sys-color-primary-container);
+            border-radius: 4px;
+        }
+
+        .projects-grid::-webkit-scrollbar-thumb:hover {
+            background: var(--md-sys-color-primary);
+        }
+
+        .project-card {
+            background: var(--md-sys-color-surface);
+            padding: 2rem;
+            border-radius: 24px;
+            box-shadow: var(--md-elevation-level1);
+            transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .project-card:hover {
+            box-shadow: var(--md-elevation-level3);
+            transform: translateY(-8px);
+        }
+
+        .project-card h3 {
+            color: var(--md-sys-color-primary);
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .project-description {
+            margin: 0.5rem 0 1.5rem 0;
+            animation: none;
+            opacity: 1;
+            color: var(--md-sys-color-on-surface-variant);
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-tag {
+            background: var(--md-sys-color-secondary-container);
+            color: var(--md-sys-color-on-secondary-container);
+            padding: 0.5rem 1rem;
+            border-radius: 12px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-link {
+            background: var(--md-sys-color-primary-container);
+            color: var(--md-sys-color-on-primary-container);
+            padding: 0.75rem 1.5rem;
+            border-radius: 12px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .project-link:hover {
+            background: var(--md-sys-color-primary);
+            color: var(--md-sys-color-on-primary);
+        }
+
         .tech-item {
             background: var(--md-sys-color-primary-container);
             color: var(--md-sys-color-on-primary-container);
@@ -347,6 +439,8 @@
             gap: 2rem;
             margin-top: 2rem;
         }
+
+        /* Стили для ссылок */
 
         .interest-card {
             background: var(--md-sys-color-surface);
@@ -473,6 +567,27 @@
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
         }
 
+        /* Анимации */
+        @keyframes fadeInSlideDown {
+            from { opacity: 0; transform: translateY(-40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInSlideUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
         /* Скрыть иконки по умолчанию */
         .sun-icon { display: none; }
         .moon-icon { display: block; }
@@ -589,6 +704,43 @@
         </div>
     </section>
 
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3>Portfolio Website</h3>
+                <p class="project-description">Современный, адаптивный веб-сайт-портфолио, созданный с использованием HTML, CSS и JavaScript, с темным режимом, плавной анимацией и чистым интерфейсом, вдохновленным Material Design.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">HTML</span>
+                    <span class="tech-tag">CSS</span>
+                    <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">Material Design</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h3>Z Music</h3>
+                <p class="project-description">Cовременный офлайн музыкальный плеер, построенный на основе React, TypeScript и Electron. Приложение предоставляет полнофункциональный интерфейс для управления музыкальной библиотекой с поддержкой плейлистов, метаданных и красивого UI.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">TypeScript</span>
+                    <span class="tech-tag">Tailwind CSS</span>
+                    <span class="tech-tag">Electron</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h3>Video player (Beta)</h3>
+                <p class="project-description">Полнофункциональное приложение для просмотра видео.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">JS</span>
+                    <span class="tech-tag">CSS</span>
+                    <span class="tech-tag">HTML</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="favorites_interests">
         <h2>Favorites & Interests</h2>
         <div class="interests-grid">
@@ -627,7 +779,7 @@
 
     <section class="cta-section">
         <h2>Let's Work Together</h2>
-        <a class="cta-btn" href="#" target="_blank">Soon</a>
+        <b class="cta-btn" href="#" target="_blank">Soon</b>
     </section>
 </main>
 
@@ -635,6 +787,7 @@
     <button class="close-btn" onclick="toggleMenu()" aria-label="Close menu">&times;</button>
     <a href="#about" onclick="toggleMenu()">About</a>
     <a href="#tech_tools" onclick="toggleMenu()">Tech & Tools</a>
+    <a href="#projects" onclick="toggleMenu()">Projects</a>
     <a href="#favorites_interests" onclick="toggleMenu()">Favorites & Interests</a>
 </div>
 
@@ -704,7 +857,7 @@
     document.addEventListener('DOMContentLoaded', () => {
         loadTheme();
 
-        const animatedElements = document.querySelectorAll('.tech-item, .interest-card');
+        const animatedElements = document.querySelectorAll('.tech-item, .interest-card, .project-card');
         animatedElements.forEach(el => {
             el.style.animationPlayState = 'paused';
             observer.observe(el);
