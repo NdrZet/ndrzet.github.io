@@ -2,9 +2,145 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tools & Technologies - Karim Sokolov</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <meta name="description" content="Explore the tools and technologies used by Karim Sokolov in web development and design projects.">
+    <meta name="keywords" content="development tools, design tools, web development, Karim Sokolov">
 </head>
 <body>
+
+<nav>
+    <button class="theme-toggle" aria-label="Toggle theme" onclick="toggleTheme()">
+        <svg class="theme-icon sun-icon" viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/>
+            <line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+        <svg class="theme-icon moon-icon" viewBox="0 0 24 24" fill="none">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+    </button>
+    <button class="menu-btn" aria-label="Open menu" onclick="toggleMenu()">
+        <svg class="menu-icon" viewBox="0 0 24 24" fill="none">
+            <path d="M3 12H21M3 6H21M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </button>
+</nav>
+
+<main>
+    <section id="tools">
+        <h1>Tools & Technologies</h1>
+        <p class="highlight">A comprehensive overview of the tools, frameworks, and technologies I use in my development and design workflow.</p>
+        
+        <h2>Development Stack</h2>
+        
+        <h3>Frontend Development</h3>
+        <div class="tech-grid">
+            <div class="tech-item">HTML5</div>
+            <div class="tech-item">CSS3</div>
+            <div class="tech-item">JavaScript (ES6+)</div>
+            <div class="tech-item">TypeScript</div>
+            <div class="tech-item">React.js</div>
+            <div class="tech-item">Next.js</div>
+            <div class="tech-item">Tailwind CSS</div>
+            <div class="tech-item">shadcn/ui</div>
+            <div class="tech-item">Material Design</div>
+        </div>
+        
+        <h3>Backend Development</h3>
+        <div class="tech-grid">
+            <div class="tech-item">Node.js</div>
+            <div class="tech-item">Python</div>
+            <div class="tech-item">Java</div>
+            <div class="tech-item">C++</div>
+            <div class="tech-item">Rust</div>
+        </div>
+        
+        <h3>Desktop Applications</h3>
+        <div class="tech-grid">
+            <div class="tech-item">Electron</div>
+            <div class="tech-item">TypeScript</div>
+            <div class="tech-item">React.js</div>
+        </div>
+        
+        <h2>Design Tools</h2>
+        
+        <h3>UI/UX Design</h3>
+        <div class="tech-grid">
+            <div class="tech-item">Figma</div>
+            <div class="tech-item">Adobe XD</div>
+            <div class="tech-item">Sketch</div>
+            <div class="tech-item">Laws of UI</div>
+            <div class="tech-item">Material Design</div>
+            <div class="tech-item">Atlassian Design</div>
+            <div class="tech-item">Spotify Design</div>
+        </div>
+        
+        <h3>Graphic Design</h3>
+        <div class="tech-grid">
+            <div class="tech-item">Adobe Photoshop</div>
+            <div class="tech-item">Adobe Illustrator</div>
+            <div class="tech-item">Clip Studio Paint</div>
+            <div class="tech-item">DaVinci Resolve</div>
+            <div class="tech-item">Fusion 20</div>
+        </div>
+        
+        <h3>Development & Collaboration</h3>
+        <div class="tech-grid">
+            <div class="tech-item">Git</div>
+            <div class="tech-item">GitHub</div>
+            <div class="tech-item">VS Code</div>
+            <div class="tech-item">Prettier</div>
+            <div class="tech-item">ESLint</div>
+            <div class="tech-item">Webpack</div>
+            <div class="tech-item">Vite</div>
+        </div>
+        
+        <h2>My Development Environment</h2>
+        <p class="high">I maintain a consistent development environment across all my projects to ensure productivity and code quality:</p>
+        
+        <ul>
+            <li><strong>Code Editor:</strong> Visual Studio Code with customized themes and extensions</li>
+            <li><strong>Version Control:</strong> Git with GitHub for collaboration and backup</li>
+            <li><strong>Code Quality:</strong> Prettier for code formatting, ESLint for code analysis</li>
+            <li><strong>Build Tools:</strong> Webpack and Vite for module bundling and development server</li>
+            <li><strong>Package Management:</strong> npm and yarn for dependency management</li>
+            <li><strong>Responsive Testing:</strong> Browser developer tools and real devices</li>
+        </ul>
+        
+        <h2>Learning & Staying Current</h2>
+        <p class="high">Technology evolves rapidly, and I'm committed to continuous learning:</p>
+        
+        <ul>
+            <li>Regularly exploring new frameworks and libraries</li>
+            <li>Following industry leaders and design systems</li>
+            <li>Participating in online courses and tutorials</li>
+            <li>Contributing to open source projects</li>
+            <li>Attending web development conferences and meetups</li>
+        </ul>
+        
+        <div class="cta-section">
+            <h2>Explore My Projects</h2>
+            <a class="cta-btn" href="index.html">View Portfolio</a>
+        </div>
+    </section>
+</main>
+
+<div class="menu-modal" id="menuModal">
+    <button class="close-btn" onclick="toggleMenu()" aria-label="Close menu">&times;</button>
+    <a href="index.html">Home</a>
+    <a href="index.html#tech_tools">Tech & Tools</a>
+    <a href="index.html#projects">Projects</a>
+    <a href="index.html#favorites_interests">Interests</a>
+</div>
 
 </body>
 </html>
