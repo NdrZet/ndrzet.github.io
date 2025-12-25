@@ -33,7 +33,7 @@
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
         </svg>
     </button>
-    <button class="menu-btn" aria-label="Open menu" onclick="toggleMenu()">
+    <button class="menu-btn" aria-label="Open menu" onclick="toggleMenu()" disabled>
         <svg class="menu-icon" viewBox="0 0 24 24" fill="none">
             <path d="M3 12H21M3 6H21M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
@@ -47,7 +47,7 @@
         
         <div class="tech-categories">
             <div class="tech-category">
-                <h2>Computer Specs</h2>
+                <h2 id="specs">Computer Specs</h2>
                 
                 <div class="interests-grid">
                     <div class="interest-card">
@@ -65,7 +65,7 @@
             </div>
             
             <div class="tech-category">
-                <h2>OS</h2>
+                <h2 id="os">OS</h2>
                 
                 <div class="interests-grid">
                     <div class="interest-card">
@@ -86,7 +86,7 @@
             </div>
             
             <div class="tech-category">
-                <h2>Apps</h2>
+                <h2 id="apps">Apps</h2>
                 
                 <div class="interests-grid">
                     <div class="interest-card">
@@ -118,7 +118,7 @@
         </div>
         
         <div class="workflow-section">
-            <h2>My Workflow</h2>
+            <h2 id="workflow">My Workflow</h2>
             <div class="interests-grid">
                 <div class="interest-card">
                     <h3>Development Environment</h3>
@@ -141,13 +141,7 @@
     </section>
 </main>
 
-<div class="menu-modal" id="menuModal">
-    <button class="close-btn" onclick="toggleMenu()" aria-label="Close menu">&times;</button>
-    <a href="index.html">About</a>
-    <a href="index.html#tech_tools">Tech & Tools</a>
-    <a href="index.html#projects">Projects</a>
-    <a href="index.html#favorites_interests">Interests</a>
-</div>
+<div id="menu-placeholder"></div>
 
 </body>
 </html>

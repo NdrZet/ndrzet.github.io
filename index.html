@@ -40,7 +40,7 @@
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
         </svg>
     </button>
-    <button class="menu-btn" aria-label="Open menu" onclick="toggleMenu()">
+    <button class="menu-btn" aria-label="Open menu" onclick="toggleMenu()" disabled>
         <svg class="menu-icon" viewBox="0 0 24 24" fill="none">
             <path d="M3 12H21M3 6H21M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
@@ -173,13 +173,7 @@
     </section>
 </main>
 
-<div class="menu-modal" id="menuModal">
-    <button class="close-btn" onclick="toggleMenu()" aria-label="Close menu">&times;</button>
-    <a href="#about" onclick="toggleMenu()">About</a>
-    <a href="#tech_tools" onclick="toggleMenu()">Tech & Tools</a>
-    <a href="#projects" onclick="toggleMenu()">Projects</a>
-    <a href="#favorites_interests" onclick="toggleMenu()">Favorites & Interests</a>
-</div>
+<div id="menu-placeholder"></div>
 
 </body>
 </html>

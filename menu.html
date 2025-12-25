@@ -1,0 +1,29 @@
+<div class="menu-modal" id="menuModal">
+    <button class="close-btn" onclick="toggleMenu()" aria-label="Close menu">&times;</button>
+    <div class="menu-container">
+        <div class="menu-col-1">
+            <div class="menu-l1-item" data-menu="about">
+                <a href="index.html">About</a>
+            </div>
+            <div class="menu-l1-item" data-menu="tools">
+                <a href="tools.html">Tech & Tools</a>
+            </div>
+        </div>
+        <div class="menu-col-2">
+            <!-- Submenu for About page -->
+            <div class="menu-l2-items" id="menu-about">
+                <a href="index.html#about" onclick="toggleMenu()">About Me</a>
+                <a href="index.html#tech_tools" onclick="toggleMenu()">Tech Stack</a>
+                <a href="index.html#projects" onclick="toggleMenu()">Projects</a>
+                <a href="index.html#favorites_interests" onclick="toggleMenu()">Interests</a>
+            </div>
+            <!-- Submenu for Tech & Tools page -->
+            <div class="menu-l2-items" id="menu-tools">
+                <a href="tools.html#specs" onclick="toggleMenu()">Computer Specs</a>
+                <a href="tools.html#os" onclick="toggleMenu()">OS</a>
+                <a href="tools.html#apps" onclick="toggleMenu()">Apps</a>
+                <a href="tools.html#workflow" onclick="toggleMenu()">Workflow</a>
+            </div>
+        </div>
+    </div>
+</div>
