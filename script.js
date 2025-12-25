@@ -11,7 +11,6 @@ function toggleTheme() {
         body.classList.remove('theme-transition');
     }, 300);
 }
-
 function toggleMenu() {
     const menu = document.getElementById('menuModal');
     menu.classList.toggle('active');
@@ -22,7 +21,6 @@ function toggleMenu() {
         document.body.style.overflow = 'auto';
     }
 }
-
 function loadTheme() {
     const savedTheme = localStorage.getItem('theme');
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -30,7 +28,6 @@ function loadTheme() {
     const theme = savedTheme || (prefersDark ? 'dark' : 'light');
     document.body.setAttribute('data-theme', theme);
 }
-
 document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') {
         const menu = document.getElementById('menuModal');
@@ -39,19 +36,16 @@ document.addEventListener('keydown', function(e) {
         }
     }
 });
-
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
     if (!localStorage.getItem('theme')) {
         const theme = e.matches ? 'dark' : 'light';
         document.body.setAttribute('data-theme', theme);
     }
 });
-
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
 };
-
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -59,7 +53,6 @@ const observer = new IntersectionObserver((entries) => {
         }
     });
 }, observerOptions);
-
 document.addEventListener('DOMContentLoaded', () => {
     loadTheme();
 
