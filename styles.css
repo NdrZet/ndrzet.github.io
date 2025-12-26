@@ -41,7 +41,7 @@
         }
 
         [data-theme="dark"] {
-            --md-sys-color-background: #000000;
+            --md-sys-color-background: #121212;
             --md-sys-color-on-background: #ffffff;
             --md-sys-color-surface: #1c1b1f;
             --md-sys-color-on-surface: #e6e1e9;
@@ -64,6 +64,21 @@
             line-height: 1.6;
             overflow-x: hidden;
             transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .interactive-canvas {
+            background-image: radial-gradient(
+                circle at var(--x, 50%) var(--y, 50%),
+                hsla(265, 35%, 40%, 0.2),
+                transparent 40%
+            );
+        }
+        [data-theme="dark"] .interactive-canvas {
+            background-image: radial-gradient(
+                circle at var(--x, 50%) var(--y, 50%),
+                hsla(250, 100%, 80%, 0.15),
+                transparent 40%
+            );
         }
 
         h1 {
@@ -202,7 +217,7 @@
             transition: fill 0.3s ease;
         }
 
-        /* --- New Menu Modal Styles --- */
+        /* --- Menu Modal Styles --- */
         .menu-modal {
             position: fixed;
             top: 0;
@@ -307,256 +322,121 @@
             color: var(--md-sys-color-on-secondary-container);
         }
 
-        /* Технологии (сиреневые карточки) */
+        /* --- Interactive Card Styles --- */
+        .cards-container {
+            display: grid;
+            gap: 2rem;
+            width: 100%;
+            perspective: 1000px;
+        }
+        .interactive-card {
+            background: var(--md-sys-color-surface-variant);
+            border: 1px solid var(--md-sys-color-outline-variant);
+            border-radius: 24px;
+            padding: 2rem;
+            text-decoration: none;
+            transform-style: preserve-3d;
+            transition: transform 0.1s linear, background 0.3s ease;
+            will-change: transform;
+        }
+        .interactive-card:hover {
+            background: var(--md-sys-color-secondary-container);
+            border-color: var(--md-sys-color-secondary);
+        }
+        [data-theme="dark"] .interactive-card {
+            background: hsla(0, 0%, 10%, 0.2);
+            border: 1px solid hsla(0, 0%, 100%, 0.1);
+        }
+        [data-theme="dark"] .interactive-card:hover {
+            background: hsla(0, 0%, 15%, 0.4);
+        }
+        .interactive-card, .interactive-card * {
+            color: var(--md-sys-color-on-surface-variant);
+        }
+        .interactive-card:hover, .interactive-card:hover * {
+            color: var(--md-sys-color-on-secondary-container);
+        }
+        [data-theme="dark"] .interactive-card, [data-theme="dark"] .interactive-card * {
+            color: var(--md-sys-color-on-surface-variant);
+        }
+        [data-theme="dark"] .interactive-card:hover, [data-theme="dark"] .interactive-card:hover * {
+            color: var(--md-sys-color-on-secondary-container);
+        }
+
+        /* --- Contact Page Specifics --- */
+        .contact-main {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            width: 100%;
+            padding: 2rem;
+        }
+        .contact-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        .contact-header h1 { font-size: 4rem; }
+        #contact .cards-container {
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            max-width: 1000px;
+        }
+        .contact-card-3d .card-content { text-align: center; }
+        .contact-card-3d .card-icon svg {
+            width: 48px;
+            height: 48px;
+            fill: var(--md-sys-color-primary);
+            margin-bottom: 1rem;
+            transition: fill 0.3s ease;
+        }
+        .contact-card-3d:hover .card-icon svg {
+            fill: var(--md-sys-color-on-secondary-container);
+        }
+        .contact-card-3d .card-content h3 {
+            font-size: 1.5rem;
+            margin: 0 0 0.5rem 0;
+        }
+        .contact-card-3d .card-content p {
+            font-size: 1rem;
+            margin: 0;
+            animation: none;
+            opacity: 0.8;
+        }
+
+        /* --- Other Page Card Grids --- */
         .tech-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 1.5rem;
             margin-top: 2rem;
+            perspective: 1000px;
         }
-
-        /* Проекты */
-        .projects-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .projects-grid::-webkit-scrollbar {
-            height: 8px;
-        }
-
-        .projects-grid::-webkit-scrollbar-track {
-            background: var(--md-sys-color-surface);
-            border-radius: 4px;
-        }
-
-        .projects-grid::-webkit-scrollbar-thumb {
-            background: var(--md-sys-color-primary-container);
-            border-radius: 4px;
-        }
-
-        .projects-grid::-webkit-scrollbar-thumb:hover {
-            background: var(--md-sys-color-primary);
-        }
-
-        .project-card {
-            background: var(--md-sys-color-surface);
-            padding: 2rem;
-            border-radius: 24px;
-            box-shadow: var(--md-elevation-level1);
-            transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 0.8s ease forwards;
-        }
-
-        .project-card:hover {
-            box-shadow: var(--md-elevation-level3);
-            transform: translateY(-8px);
-        }
-
-        .project-card h3 {
-            color: var(--md-sys-color-primary);
-            margin-bottom: 1rem;
-            font-weight: 500;
-        }
-
-        .project-description {
-            margin: 0.5rem 0 1.5rem 0;
-            animation: none;
-            opacity: 1;
-            color: var(--md-sys-color-on-surface);
-        }
-
-        .project-tech {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .tech-tag {
-            background: var(--md-sys-color-secondary-container);
-            color: var(--md-sys-color-on-secondary-container);
-            padding: 0.5rem 1rem;
-            border-radius: 12px;
-            font-size: 0.875rem;
-            font-weight: 500;
-        }
-
-        .project-links {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .project-link {
-            background: var(--md-sys-color-primary-container);
-            color: var(--md-sys-color-on-primary-container);
-            padding: 0.75rem 1.5rem;
-            border-radius: 12px;
-            font-size: 0.875rem;
-            font-weight: 500;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .project-link:hover {
-            background: var(--md-sys-color-primary);
-            color: var(--md-sys-color-on-primary);
-        }
-
-        .tech-item {
-            background: var(--md-sys-color-primary-container);
-            color: var(--md-sys-color-on-primary-container);
-            padding: 1.5rem;
-            border-radius: 16px;
-            box-shadow: var(--md-elevation-level1);
-            transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
-            font-weight: 500;
-            text-align: center;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 0.6s ease forwards;
-        }
-
-        .tech-item:hover {
-            box-shadow: var(--md-elevation-level3);
-            transform: translateY(-4px);
-        }
-
-        [data-theme="dark"] .tech-item {
-            background: var(--md-sys-color-primary-container);
-            color: var(--md-sys-color-on-primary-container);
-        }
-
-        .tech-item:nth-child(1) { animation-delay: 0.1s; }
-        .tech-item:nth-child(2) { animation-delay: 0.15s; }
-        .tech-item:nth-child(3) { animation-delay: 0.2s; }
-        .tech-item:nth-child(4) { animation-delay: 0.25s; }
-        .tech-item:nth-child(5) { animation-delay: 0.3s; }
-        .tech-item:nth-child(6) { animation-delay: 0.35s; }
-        .tech-item:nth-child(7) { animation-delay: 0.4s; }
-        .tech-item:nth-child(8) { animation-delay: 0.45s; }
-        .tech-item:nth-child(9) { animation-delay: 0.5s; }
-        .tech-item:nth-child(10) { animation-delay: 0.55s; }
-        .tech-item:nth-child(11) { animation-delay: 0.6s; }
-        .tech-item:nth-child(12) { animation-delay: 0.65s; }
-        .tech-item:nth-child(13) { animation-delay: 0.7s; }
-        .tech-item:nth-child(14) { animation-delay: 0.75s; }
-        .tech-item:nth-child(15) { animation-delay: 0.8s; }
-        .tech-item:nth-child(16) { animation-delay: 0.85s; }
-        .tech-item:nth-child(17) { animation-delay: 0.9s; }
-        .tech-item:nth-child(18) { animation-delay: 0.95s; }
-        .tech-item:nth-child(19) { animation-delay: 1.0s; }
-        .tech-item:nth-child(20) { animation-delay: 1.05s; }
-        .interests-grid {
+        .projects-grid, .interests-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
             margin-top: 2rem;
+            perspective: 1000px;
         }
 
-        /* Стили для ссылок */
-
-        .interest-card {
-            background: var(--md-sys-color-surface);
-            padding: 2rem;
-            border-radius: 24px;
-            box-shadow: var(--md-elevation-level1);
-            transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 0.8s ease forwards;
-        }
-
-        .interest-card:hover {
-            box-shadow: var(--md-elevation-level3);
-            transform: translateY(-8px);
-        }
-
-        .interest-card:nth-child(1) { animation-delay: 0.2s; }
-        .interest-card:nth-child(2) { animation-delay: 0.3s; }
-        .interest-card:nth-child(3) { animation-delay: 0.4s; }
-        .interest-card:nth-child(4) { animation-delay: 0.5s; }
-
-        .interest-card h3 {
-            color: var(--md-sys-color-primary);
-            margin-bottom: 1rem;
-            font-weight: 500;
-        }
-
-        .interest-card p {
-            margin: 0.5rem 0;
-            animation: none;
-            opacity: 1;
-        }
-
-        /* Стили для ссылок */
-        a {
-            color: var(--md-sys-color-primary);
-            text-decoration: none;
+        /* Ripple Effect */
+        .ripple-effect {
             position: relative;
-            transition: color 0.3s ease;
+            overflow: hidden;
         }
-
-        a:hover {
-            color: var(--md-sys-color-secondary);
-        }
-
-        a::after {
-            content: '';
+        .ripple-effect .ripple {
             position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -2px;
-            left: 0;
-            background-color: var(--md-sys-color-primary);
-            transition: width 0.3s ease;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.6);
+            transform: scale(0);
+            animation: ripple-animation 0.6s linear;
         }
-
-        a:hover::after {
-            width: 100%;
-        }
-
-        /* CTA секция по центру */
-        .cta-section {
-            background: var(--md-sys-color-primary-container);
-            margin: 4rem auto 0 auto;
-            border-radius: 32px 32px 0 0;
-            text-align: center;
-            max-width: 600px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            box-shadow: var(--md-elevation-level2);
-        }
-
-        .cta-section h2 {
-            color: var(--md-sys-color-on-primary-container);
-            margin-bottom: 2rem;
-        }
-
-        .cta-btn {
-            background: var(--md-sys-color-primary);
-            color: var(--md-sys-color-on-primary);
-            border: none;
-            padding: 1rem 2rem;
-            border-radius: 12px;
-            font-size: 1.125rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: var(--md-elevation-level2);
-            display: inline-block;
-            text-decoration: none;
-        }
-
-        .cta-btn:hover {
-            box-shadow: var(--md-elevation-level3);
-            transform: translateY(-2px);
+        @keyframes ripple-animation {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
         }
 
         /* Анимации */
@@ -605,13 +485,19 @@
         }
 
         /* Адаптивность */
+        @media (max-width: 960px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         @media (max-width: 768px) {
             h1 { font-size: 2.5rem; }
             h2 { font-size: 1.75rem; }
             section { padding: 2rem 1rem; }
             nav { padding: 1rem 1rem; }
             .tech-grid { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; }
-            .interests-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+            .interests-grid, .projects-grid { grid-template-columns: 1fr; gap: 1.5rem; }
             .menu-container {
                 grid-template-columns: 1fr;
                 width: 90%;
@@ -619,6 +505,9 @@
             }
             .menu-col-2 {
                 display: none; /* Hide on mobile for simplicity */
+            }
+            .contact-header h1 {
+                font-size: 2.5rem;
             }
         }
 

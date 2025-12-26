@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Karim Sokolov</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <meta name="description" content="Contact Karim Sokolov for web development projects, UI/UX design inquiries, or collaboration opportunities.">
+</head>
+<body id="contact-body">
+
+<nav>
+    <button class="theme-toggle" aria-label="Toggle theme" onclick="toggleTheme()">
+        <svg class="theme-icon sun-icon" viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+        <svg class="theme-icon moon-icon" viewBox="0 0 24 24" fill="none">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+    </button>
+    <button class="menu-btn" aria-label="Open menu" onclick="toggleMenu()" disabled>
+        <svg class="menu-icon" viewBox="0 0 24 24" fill="none">
+            <path d="M3 12H21M3 6H21M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </button>
+</nav>
+
+<main class="contact-main">
+    <div class="contact-header">
+        <h1>Get in Touch</h1>
+        <p class="highlight">An interactive canvas of possibilities. Reach out and let's create something amazing together.</p>
+    </div>
+
+    <div class="cards-container">
+        <a href="mailto:karim.sokolov.dev@email.com" class="contact-card-3d ripple-effect">
+            <div class="card-content">
+                <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
+                <h3>Email</h3>
+                <p>karim.sokolov.dev@email.com</p>
+            </div>
+        </a>
+        <a href="https://github.com/ndrzet" target="_blank" class="contact-card-3d ripple-effect">
+            <div class="card-content">
+                <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.1.75-.24.75-.53v-1.84c-3.04.66-3.68-1.47-3.68-1.47a2.89 2.89 0 00-1.2-1.58c-.98-.67.07-.66.07-.66a2.29 2.29 0 011.66 1.26 2.3 2.3 0 003.16.9.23.23 0 01.22-.65c-2.4-.27-4.93-1.2-4.93-5.32a4.15 4.15 0 011.11-2.88 3.86 3.86 0 01.1-2.84s.9-.28 3 .98a10.4 10.4 0 015.42 0c2.1-1.26 3-.98 3-.98a3.86 3.86 0 01.1 2.84 4.15 4.15 0 011.11 2.88c0 4.13-2.53 5.05-4.95 5.32a2.5 2.5 0 01.75.73v2.19c0 .29.2.63.75.53A11 11 0 0012 1.27z"/></svg></div>
+                <h3>GitHub</h3>
+                <p>@ndrzet</p>
+            </div>
+        </a>
+        <a href="#" target="_blank" class="contact-card-3d ripple-effect">
+            <div class="card-content">
+                <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zm-7 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM6.5 8.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm8.5 2a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/></svg></div>
+                <h3>LinkedIn</h3>
+                <p>@karim-sokolov</p>
+            </div>
+        </a>
+    </div>
+</main>
+
+<div id="menu-placeholder"></div>
+
+</body>
+</html>
