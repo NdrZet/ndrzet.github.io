@@ -344,22 +344,13 @@
             border-color: var(--md-sys-color-secondary);
         }
         [data-theme="dark"] .interactive-card {
-            background: hsla(0, 0%, 10%, 0.2);
-            border: 1px solid hsla(0, 0%, 100%, 0.1);
-        }
-        [data-theme="dark"] .interactive-card:hover {
-            background: hsla(0, 0%, 15%, 0.4);
+            background: var(--md-sys-color-surface);
+            border: 1px solid var(--md-sys-color-outline);
         }
         .interactive-card, .interactive-card * {
             color: var(--md-sys-color-on-surface-variant);
         }
         .interactive-card:hover, .interactive-card:hover * {
-            color: var(--md-sys-color-on-secondary-container);
-        }
-        [data-theme="dark"] .interactive-card, [data-theme="dark"] .interactive-card * {
-            color: var(--md-sys-color-on-surface-variant);
-        }
-        [data-theme="dark"] .interactive-card:hover, [data-theme="dark"] .interactive-card:hover * {
             color: var(--md-sys-color-on-secondary-container);
         }
 
