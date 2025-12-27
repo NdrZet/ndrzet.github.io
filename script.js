@@ -103,8 +103,8 @@
                 const rect = this.getBoundingClientRect();
                 const ripple = document.createElement('span');
                 const size = Math.max(rect.width, rect.height);
-                const x = e.clientX - rect.left - size / 2;
-                const y = e.clientY - rect.top - size / 2;
+                const x = e.pageX - rect.left - size / 2;
+                const y = e.pageY - rect.top - size / 2;
 
                 ripple.style.width = ripple.style.height = `${size}px`;
                 ripple.style.left = `${x}px`;
@@ -129,8 +129,8 @@
 
         // Spotlight effect
         canvas.addEventListener('mousemove', (e) => {
-            canvas.style.setProperty('--x', `${e.clientX}px`);
-            canvas.style.setProperty('--y', `${e.clientY}px`);
+            canvas.style.setProperty('--x', `${e.pageX}px`);
+            canvas.style.setProperty('--y', `${e.pageY}px`);
         });
 
         // 3D card tilt effect
